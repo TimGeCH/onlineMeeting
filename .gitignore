@@ -1,0 +1,33 @@
+# 忽略 node_modules 文件夹
+node_modules/
+
+# 忽略日志文件
+*.log
+
+# 忽略 .env 文件（通常用于存储环境变量和敏感信息）
+.env
+
+# 忽略 IDE 和编辑器生成的文件
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 忽略操作系统生成的文件
+.DS_Store
+Thumbs.db
+
+# 忽略 npm 的调试日志
+npm-debug.log*
+
+# 忽略 yarn 的调试日志和锁定文件
+yarn-debug.log*
+yarn-error.log*
+yarn.lock
+
+# 忽略构建输出目录
+/dist
+/build
+
+# 忽略coverage输出
+/coverage

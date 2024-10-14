@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create or Join a Session</title>
+    <link rel="stylesheet" href="public/Assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="public/Assets/css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md fixed-top">
+        <div class="container">
+            <img src="public/assets/images/custom-logo.png" class="logo" alt="">
+            <a href="#" class="navbar-brand">Meet Connect</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Overview</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Plans & Pricing</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-outline-primary join-meeting">Join Session</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-primary new-meeting">Create Session</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="jumbotron">
+            <div class="container">
+                <div class="w-50">
+                    <h1>High-Quality Video Calls for Everyone</h1>
+                    <p>Join or create secure sessions for business or personal use, tailored to your needs.</p>
+                    <ul class="display-center justify-content-start">
+                        <li style="padding: 0;">
+                            <button class="btn btn-lg new-meeting display-center">
+                                <span class="material-icons">video_call</span>
+                                <span>Start Session</span>
+                            </button>
+                        </li>
+                        <li class="pl-3">
+                            <div class="input-group">
+                                <input type="text" placeholder="Enter session code" class="form-control enter-code">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary join-action" type="button">Join</button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w-50 d-flex justify-content-center align-items-center">
+                    <img src="public/Assets/images/google-meet-people.jpg" alt="Connect with others"
+                        class="signin-image">
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <h6>Discover more about Meet Connect and how it can improve your communication experience.</h6>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            $(document).on("click", ".join-meeting", function () {
+                $(".enter-code").focus();
+            })
+            $(document).on("click", ".join-action", function () {
+                var join_value = $('.enter-code').val();
+                var meetingUrl = window.location.origin + "?meetingID=" + join_value;
+                window.location.replace(meetingUrl);
+            })
+            $(document).on("click", ".new-meeting", function () {
+                var eight_d_value = Math.floor(Math.random() * 100000000);
+                var meetingUrl = window.location.origin + "?meetingID=" + eight_d_value;
+                window.location.replace(meetingUrl);
+            })
+
+        })
+    </script>
+</body>
+
+</html>
