@@ -452,11 +452,11 @@ var MyApp = (function () {
       });
       var div = $("<div>").html(
         "<span class='font-weight-bold mr-3' style='color:black'>" +
-          data.from +
-          "</span>" +
-          lTime +
-          "</br>" +
-          data.message
+        data.from +
+        "</span>" +
+        lTime +
+        "</br>" +
+        data.message
       );
       $("#messages").append(div);
     });
@@ -487,11 +487,11 @@ var MyApp = (function () {
       });
       var div = $("<div>").html(
         "<span class='font-weight-bold mr-3' style='color:black'>" +
-          user_id +
-          "</span>" +
-          lTime +
-          "</br>" +
-          msgData
+        user_id +
+        "</span>" +
+        lTime +
+        "</br>" +
+        msgData
       );
       $("#messages").append(div);
       $("#msgbox").val("");
@@ -518,10 +518,10 @@ var MyApp = (function () {
     $("#divUsers").append(newDivId);
     $(".in-call-wrap-up").append(
       '<div class="in-call-wrap d-flex justify-content-between align-items-center mb-3" id="participant_' +
-        connId +
-        '"> <div class="participant-img-name-wrap display-center cursor-pointer"> <div class="participant-img"> <img src="public/Assets/images/other.jpg" alt="" class="border border-secondary" style="height: 40px;width: 40px;border-radius: 50%;"> </div> <div class="participant-name ml-2"> ' +
-        other_user_id +
-        '</div> </div> <div class="participant-action-wrap display-center"> <div class="participant-action-dot display-center mr-2 cursor-pointer"> <span class="material-icons"> more_vert </span> </div> <div class="participant-action-pin display-center mr-2 cursor-pointer"> <span class="material-icons"> push_pin </span> </div> </div> </div>'
+      connId +
+      '"> <div class="participant-img-name-wrap display-center cursor-pointer"> <div class="participant-img"> <img src="public/Assets/images/other.jpg" alt="" class="border border-secondary" style="height: 40px;width: 40px;border-radius: 50%;"> </div> <div class="participant-name ml-2"> ' +
+      other_user_id +
+      '</div> </div> <div class="participant-action-wrap display-center"> <div class="participant-action-dot display-center mr-2 cursor-pointer"> <span class="material-icons"> more_vert </span> </div> <div class="participant-action-pin display-center mr-2 cursor-pointer"> <span class="material-icons"> push_pin </span> </div> </div> </div>'
     );
     $(".participant-count").text(userNum);
   }
