@@ -1,0 +1,35 @@
+.main-content {
+  display: flex;
+  height: 100vh;
+}
+
+.left-section, .right-section {
+  width: 300px; /* 或者您希望的宽度 */
+  transition: width 0.3s ease;
+  overflow-y: auto;
+}
+
+.center-section {
+  flex-grow: 1;
+  transition: margin 0.3s ease;
+}
+
+/* 当左侧栏收起时 */
+.left-section.collapsed {
+  width: 50px; /* 或者您希望的收起宽度 */
+}
+
+/* 当右侧栏收起时 */
+.right-section.collapsed {
+  width: 50px; /* 或者您希望的收起宽度 */
+}
+
+/* 当左侧栏展开时，调整中间区域的边距 */
+.left-section:not(.collapsed) + .center-section {
+  margin-left: 300px; /* 与左侧栏宽度相同 */
+}
+
+/* 当右侧栏展开时，调整中间区域的边距 */
+.center-section.right-expanded {
+  margin-right: 300px; /* 与右侧栏宽度相同 */
+}
