@@ -80,7 +80,8 @@ body {
     height: 100%;
     justify-content: space-between;
     gap: 50px;
-    max-width: 1600px; /* 增加容器最大宽度 */
+    max-width: 1600px;
+    /* 增加容器最大宽度 */
 }
 
 .jumbotron h1 {
@@ -100,7 +101,8 @@ body {
     border-radius: 25px;
     padding: 10px 20px;
     font-size: 16px;
-    height: 46px; /* 与输入框组件高度一致 */
+    height: 46px;
+    /* 与输入框组件高度一致 */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -121,7 +123,8 @@ body {
 /* 修改输入框和按钮样式 */
 .input-group {
     display: flex;
-    align-items: stretch; /* 改为 stretch 以使子元素填充整个高度 */
+    align-items: stretch;
+    /* 改为 stretch 以使子元素填充整个高度 */
     background-color: #fff;
     border-radius: 25px;
     overflow: hidden;
@@ -154,11 +157,13 @@ body {
     color: #fff;
     transition: all 0.3s ease;
     padding: 0 20px;
-    height: 100%; /* 确保按钮高度填满父元素 */
+    height: 100%;
+    /* 确保按钮高度填满父元素 */
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 0 25px 25px 0; /* 只在右侧添加圆角 */
+    border-radius: 0 25px 25px 0;
+    /* 只在右侧添加圆角 */
 }
 
 .input-group .btn:hover {
@@ -195,11 +200,11 @@ body {
     display: flex;
     justify-content: flex-end;
     padding-left: 50px;
-    margin-top: -100px; 
+    margin-top: -100px;
 }
 
 .jumbotron .w-50:last-child .d-flex {
-    height: 100%; 
+    height: 100%;
 }
 
 .signin-image {
@@ -207,7 +212,7 @@ body {
     height: auto;
     border-radius: 20px;
     box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
-    max-height: 90%; 
+    max-height: 90%;
     object-fit: cover;
 }
 
@@ -256,27 +261,31 @@ body {
 }
 
 .jumbotron .w-50 {
-    width: 50% !important; /* 恢复为50%宽度 */
-    max-width: 600px; /* 设置最大宽度 */
+    width: 50% !important;
+    /* 恢复为50%宽度 */
+    max-width: 600px;
+    /* 设置最大宽度 */
 }
 
 .jumbotron .w-50:first-child {
     width: 60% !important;
     max-width: 800px;
     padding-right: 50px;
-    margin-top: -200px; /* 添加负的上边距，使内容向上移动 */
+    margin-top: -200px;
+    /* 添加负的上边距，使内容向上移动 */
     display: flex;
     flex-direction: column;
-    justify-content: center; /* 垂直居中内容 */
+    justify-content: center;
+    /* 垂直居中内容 */
 }
 
 .jumbotron .w-50:last-child {
-    width: 40% !important; 
+    width: 40% !important;
     max-width: 600px;
     display: flex;
     justify-content: flex-end;
     padding-left: 50px;
-    margin-top: -100px; 
+    margin-top: -100px;
 }
 
 @media (max-width: 1200px) {
@@ -298,16 +307,16 @@ body {
 
 /* 调整标题和段落的间距 */
 .jumbotron h1 {
-    margin-bottom: 1rem; 
+    margin-bottom: 1rem;
 }
 
 .jumbotron p {
-    margin-bottom: 1.5rem; 
+    margin-bottom: 1.5rem;
 }
 
 /* 调整按钮组的样式 */
 .jumbotron ul.display-center {
-    margin-top: 1rem; 
+    margin-top: 1rem;
 }
 
 /* 修改右侧容器的样式 */
@@ -317,11 +326,11 @@ body {
     display: flex;
     justify-content: flex-end;
     padding-left: 50px;
-    margin-top: -100px; 
+    margin-top: -100px;
 }
 
 .jumbotron .w-50:last-child .d-flex {
-    height: 100%; 
+    height: 100%;
 }
 
 .signin-image {
@@ -329,14 +338,15 @@ body {
     height: auto;
     border-radius: 20px;
     box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
-    max-height: 90%; 
+    max-height: 90%;
     object-fit: cover;
 }
 
 /* 修改输入框和按钮样式 */
 .input-group {
     display: flex;
-    align-items: stretch; /* 改为 stretch 以使子元素填充整个高度 */
+    align-items: stretch;
+    /* 改为 stretch 以使子元素填充整个高度 */
     background-color: #fff;
     border-radius: 25px;
     overflow: hidden;
@@ -369,11 +379,13 @@ body {
     color: #fff;
     transition: all 0.3s ease;
     padding: 0 20px;
-    height: 100%; /* 确保按钮高度填满父元素 */
+    height: 100%;
+    /* 确保按钮高度填满父元素 */
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 0 25px 25px 0; /* 只在右侧添加圆角 */
+    border-radius: 0 25px 25px 0;
+    /* 只在右侧添加圆角 */
 }
 
 .input-group .btn:hover {
@@ -388,4 +400,149 @@ body {
 
 .jumbotron ul.display-center li {
     margin-bottom: 1rem;
+}
+
+/*.......... index page........... */
+.home-wrap {
+    background-color: rgb(31, 30, 30);
+}
+
+.g-top {
+    height: 89vh;
+    position: relative;
+}
+
+.video-wrap {
+    height: 600px;
+}
+
+.video-wrap>* {
+    flex: 1 1 250px;
+    border: 1px solid white;
+}
+
+.g-top-left {
+    position: absolute;
+    right: 0;
+    height: 8vh;
+    top: 0;
+    border-bottom-left-radius: 10px;
+}
+
+.top-left-participant-wrap {
+    position: relative;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+    padding: 5px;
+}
+
+.cursor-pointer:hover {
+    cursor: pointer;
+    padding: 5px;
+    background-color: rgb(226, 225, 225);
+    border-radius: 5px;
+}
+
+.top-left-participant-count {
+    position: absolute;
+    top: -2px;
+    right: -3px;
+    font-size: 15px;
+}
+
+.g-bottom {
+    /* margin: 0 -10px !important; */
+    padding: 0 20px;
+    box-shadow: 0 0 5px black;
+    z-index: 2;
+}
+
+.bottom-left {
+    position: relative;
+    padding: 5px;
+}
+
+.action-icon-style {
+    font-size: 8px !important;
+    height: 40px;
+    width: 40px;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+}
+
+.action-icon-style span.material-icons {
+    /* font-size: 18px; */
+}
+
+.end-call-wrap {
+    -ms-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+
+.top-remote-video-show-wrap {
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /* background-image: url(../images/bg.png) !important; */
+}
+
+video {
+    border: 1px solid gray;
+    width: 300px;
+}
+
+.active {
+    background-color: #00808047;
+    border-radius: 5px;
+}
+
+.top-box {
+    background-color: rgb(14 6 6);
+    position: fixed;
+    width: 30%;
+    height: 30%;
+    top: 20.5%;
+    left: 35.5%;
+    display: block;
+    box-shadow: 0 0 5px white;
+    border-radius: 10px;
+    z-index: 999;
+    columns: white;
+    border: 2px solid white;
+}
+
+.bottom-left {
+    position: relative;
+    padding: 5px;
+}
+
+.g-details {
+    position: absolute;
+    width: 30vw;
+    background-color: white;
+    margin-top: -135px;
+    counter-reset: black;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.g-details-heading-show {
+    font-size: 14px;
+    padding-left: 10px;
+}
+
+.recording-show {
+    position: absolute;
+    margin-bottom: 132px;
+    display: none;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
