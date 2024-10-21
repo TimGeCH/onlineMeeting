@@ -9,6 +9,34 @@
     <link rel="stylesheet" href="public/Assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="public/Assets/css/style.css">
+    <style>
+        /* 添加响应式样式 */
+        @media (max-width: 768px) {
+            .jumbotron .container {
+                flex-direction: column;
+            }
+            .jumbotron .w-50 {
+                width: 100% !important;
+                margin-bottom: 2rem;
+            }
+            .signin-image {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+        @media (max-width: 576px) {
+            .display-center {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .display-center li {
+                margin-bottom: 1rem;
+            }
+            .input-group {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -47,13 +75,13 @@
     </nav>
     <main>
         <div class="jumbotron">
-            <div class="container">
+            <div class="container d-flex flex-wrap">
                 <div class="w-50">
                     <h1>High-Quality Video Calls for Everyone</h1>
                     <p>Join or create secure sessions for business or personal use, tailored to your needs.</p>
-                    <ul class="display-center justify-content-start">
+                    <ul class="display-center justify-content-start flex-wrap">
                         <li style="padding: 0;">
-                            <button class="btn btn-lg new-meeting display-center">
+                            <button class="btn btn-lg new-meeting display-center mb-2 mb-md-0">
                                 <span class="material-icons">video_call</span>
                                 <span>Start Session</span>
                             </button>
@@ -70,7 +98,7 @@
                 </div>
                 <div class="w-50 d-flex justify-content-center align-items-center">
                     <img src="public/Assets/images/google-meet-people.jpg" alt="Connect with others"
-                        class="signin-image">
+                        class="signin-image img-fluid">
                 </div>
             </div>
         </div>

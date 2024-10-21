@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="public/Assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="public/Assets/css/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.2/socket.io.js"></script>
     <script src="public/Assets/js/jquery-3.4.1.min.js"></script>
     <script src="public/Assets/js/app.js"></script>
     <script>
@@ -161,9 +161,13 @@
                         </div>
                     </div>
                     <div class="meeting-summary-content" style="height: 80vh; overflow-y: auto; padding: 15px;">
-                        <!-- 这里将显示语音转文字的内容 -->
-                        <p>Here are the contents of the meeting minutes. This is currently a sample text, which needs to
-                            be replaced with real speech-to-text content when used in practice.</p>
+                        <!-- 在 meeting-summary-content div 中添加以下内容 -->
+                        <div class="audio-controls">
+                            <button id="startRecording">Record</button>
+                            <button id="stopRecording" disabled>Stop</button>
+                            <button id="sendAudio" disabled>Send</button>
+                        </div>
+                        <div id="transcription-result"></div>
                     </div>
                 </div>
             </div>

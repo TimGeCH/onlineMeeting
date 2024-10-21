@@ -460,6 +460,10 @@ var MyApp = (function () {
       );
       $("#messages").append(div);
     });
+    // 在event_process_for_signaling_server函数中添加以下内容
+    socket.on("updateTranscription", function (data) {
+      $("#transcription-result").append("<p>" + data.text + "</p>");
+    });
   }
   function eventHandeling() {
     // <!-- ......................HandRaise ...............-->
@@ -502,6 +506,72 @@ var MyApp = (function () {
 
     $("#divUsers").on("dblclick", "video", function () {
       this.requestFullscreen();
+    });
+
+    // 在eventHandeling函数中添加以下内容
+    let mediaRecorder;
+    let audioChunks = [];
+
+    $("#startRecording").on("click", function () {
+      navigator.mediaDevices.getUserMedia({ audio: true })
+        .then(stream => {
+          mediaRecorder = new MediaRecorder(stream);
+          mediaRecorder.start();
+
+          mediaRecorder.addEventListener("dataavailable", event => {
+            audioChunks.push(event.data);
+          });
+
+          $(this).prop("disabled", true);
+          $("#stopRecording").prop("disabled", false);
+        });
+    });
+
+    $("#stopRecording").on("click", function () {
+      mediaRecorder.stop();
+      $(this).prop("disabled", true);
+      $("#startRecording").prop("disabled", false);
+      $("#sendAudio").prop("disabled", false);
+    });
+
+    $("#sendAudio").on("click", function () {
+      const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+      const formData = new FormData();
+      formData.append("audio_file", audioBlob, "audio.webm");
+
+      $.ajax({
+        url: "/proxy-asr",
+        type: "POST",
+        data: formData,
+        processData: false,
+        contentType: false,
+        xhr: function () {
+          var xhr = new window.XMLHttpRequest();
+          xhr.upload.addEventListener("progress", function (evt) {
+            if (evt.lengthComputable) {
+              var percentComplete = evt.loaded / evt.total;
+              console.log('Upload progress: ' + percentComplete * 100 + '%');
+            }
+          }, false);
+          return xhr;
+        },
+        success: function (response) {
+          console.log('Received response:', response);
+          $("#transcription-result").text(response.text);
+          socket.emit("transcriptionResult", {
+            meetingId: meeting_id,
+            text: response.text
+          });
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          console.error("Error:", textStatus, errorThrown);
+          console.log("Response:", jqXHR.responseText);
+          alert("An error occurred while processing the audio. Please check the console for more details.");
+        }
+      });
+
+      audioChunks = [];
+      $(this).prop("disabled", true);
     });
   }
 
@@ -740,3 +810,4 @@ var MyApp = (function () {
     },
   };
 })();
+
